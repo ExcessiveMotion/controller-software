@@ -1,0 +1,47 @@
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!component.xml
+!.project
+!.cproject
+!constraints.xdc
+!*.xci
+!*.v
+!*.sv
+!*.svh
+!*.vh
+!*.vhd
+!*.tcl
+!*.wcfg
+!*.h
+!*.cc
+!*.cpp
+!*.c
+!*.inc
+!*.py
+!*.xdc
+!*.md
+
+# ...even if they are in subdirectories
+!*/
+
+# Except for xilinx auto-generated files
+/**/*.srcs/
+/**/*.cache/
+/**/*.hw/
+/**/*.ip_user_files/
+/**/*.runs/
+/**/*.sim/
+/**/*_BSP*/
+/**/*_HW*/
+/**/.Xil/
+/**/.metadata/
+/**/RemoteSystemsTempFiles/
+/**/doc/
+/**/webtalk/
+/**/hdl/
+/**/demo_tb/
+/**/misc/
+/**/bd/
