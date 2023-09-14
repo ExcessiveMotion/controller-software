@@ -1,0 +1,46 @@
+{
+    "name": "jogJoint",
+    "description": "Jog an joint with a specified velocity",
+    "params": [
+        {
+            "name": "jointIndex",
+            "description": "The index of the joint to jog",
+            "schema": {
+                "type": "integer"
+            }
+        },
+        {
+            "name": "direction",
+            "description": "Direction to jog the joint.",
+            "schema": {
+                "type": "integer"
+            }
+        },
+        {
+            "name": "speed",
+            "description": "The speed at which to jog.",
+            "schema": {
+                "type": "integer"
+            }
+        }
+    ],
+    "examples": [
+        {
+            "name": "jogJoint",
+            "params": [
+                {
+                    "name": "jointIndex",
+                    "value": 3
+                },
+                {
+                    "name": "direction",
+                    "value": 1
+                },
+                {
+                    "name": "speed",
+                    "value": 88
+                }
+            ]
+        }
+    ]
+}

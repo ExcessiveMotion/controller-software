@@ -1,0 +1,34 @@
+{
+    "name": "getPosition",
+    "description": "Get current joint positions",
+    "params": [],
+    "result": {
+        "name": "jointPositions",
+        "description": "updated joint positions",
+        "schema": {
+            "type": "array",
+            "items": {
+                "$ref": "#components/schemas/jointPosition"
+            }
+        }
+    },
+    "examples": [
+        {
+            "name": "getPosition",
+            "params": [],
+            "result": {
+                "name": "jointPositions",
+                "value": [
+                    {
+                        "jointIndex": 1,
+                        "position": 393
+                    },
+                    {
+                        "jointIndex": 5,
+                        "position": 1829
+                    }
+                ]
+            }
+        }
+    ]
+}
