@@ -1,6 +1,6 @@
 {
     "name": "getState",
-    "description": "Get the current state",
+    "description": "Get the current state and optionally subscribe to changes",
     "params": [
         {
             "name": "include",
@@ -27,7 +27,7 @@
         {
             "name": "subscribe",
             "required": false,
-            "description": "Subscribe to the state keys included by the request",
+            "description": "Subscribe to changes in the keys included in the request",
             "schema": {
                 "type": "boolean"
             }
@@ -35,7 +35,7 @@
     ],
     "result": {
         "name": "state",
-        "description": "the current state. For subscription updates, only changed keys for changed values will be included.",
+        "description": "the current state. For subscription updates, only keys for changed values will be included.",
         "schema": {
             "$ref": "#components/schemas/state"
         }

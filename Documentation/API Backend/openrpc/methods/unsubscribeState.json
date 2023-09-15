@@ -1,6 +1,6 @@
 {
     "name": "unsubscribeState",
-    "description": "Get the current state",
+    "description": "Unsubscribe from changes to state",
     "params": [
         {
             "name": "include",
