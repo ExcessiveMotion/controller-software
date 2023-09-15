@@ -7,7 +7,7 @@
   "methods": [
     {
       "name": "getActiveSubscriptions",
-      "description": "Get a list of state keys that the client is currently subscribed to",
+      "description": "Get a list of state keys for which the client is currently subscribed to value changes",
       "params": [],
       "result": {
         "name": "activeStateKeySubscriptions",
@@ -47,7 +47,7 @@
           }
         },
         {
-          "name": "subscribe",
+          "name": "subscribeToChanges",
           "required": false,
           "description": "Subscribe to changes in the keys included in the request",
           "schema": {
