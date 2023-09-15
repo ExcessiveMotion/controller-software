@@ -25,7 +25,7 @@
             }
         },
         {
-            "name": "subscribe",
+            "name": "subscribeToChanges",
             "required": false,
             "description": "Subscribe to changes in the keys included in the request",
             "schema": {

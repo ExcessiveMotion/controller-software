@@ -1,6 +1,6 @@
 {
     "name": "getActiveSubscriptions",
-    "description": "Get a list of state keys that the client is currently subscribed to",
+    "description": "Get a list of state keys for which the client is currently subscribed to value changes",
     "params": [],
     "result": {
         "name": "activeStateKeySubscriptions",
