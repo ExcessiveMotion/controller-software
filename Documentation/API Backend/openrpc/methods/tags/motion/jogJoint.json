@@ -24,6 +24,12 @@
             }
         }
     ],
+    "result": {
+        "name": "noResult",
+        "schema": {
+            "type": "null"
+        }
+    },
     "examples": [
         {
             "name": "jogJoint",
@@ -40,7 +46,11 @@
                     "name": "speed",
                     "value": 88
                 }
-            ]
+            ],
+            "result": {
+                "name": "noResult",
+                "value": null
+            }
         }
     ]
 }

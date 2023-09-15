@@ -24,5 +24,11 @@
                 }
             }
         }
-    ]
+    ],
+    "result": {
+        "name": "noResult",
+        "schema": {
+            "type": "null"
+        }
+    }
 }

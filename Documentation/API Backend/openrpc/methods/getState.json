@@ -37,7 +37,7 @@
         "name": "state",
         "description": "the current state. For subscription updates, only keys for changed values will be included.",
         "schema": {
-            "$ref": "#components/schemas/state"
+            "$ref": "#/components/schemas/state"
         }
     }
 }

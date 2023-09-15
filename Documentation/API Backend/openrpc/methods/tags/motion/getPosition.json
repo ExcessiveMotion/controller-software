@@ -8,7 +8,7 @@
         "schema": {
             "type": "array",
             "items": {
-                "$ref": "#components/schemas/jointPosition"
+                "$ref": "#/components/schemas/jointPosition"
             }
         }
     },

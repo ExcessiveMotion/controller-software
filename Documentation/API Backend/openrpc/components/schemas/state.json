@@ -5,7 +5,7 @@
             "type": "boolean"
         },
         "jointPositions": {
-            "$ref": "#components/schemas/jointPositions"
+            "$ref": "#/components/schemas/jointPositions"
         }
     }
 }

@@ -59,7 +59,7 @@
         "name": "state",
         "description": "the current state. For subscription updates, only keys for changed values will be included.",
         "schema": {
-          "$ref": "#components/schemas/state"
+          "$ref": "#/components/schemas/state"
         }
       }
     },
@@ -73,7 +73,7 @@
         "schema": {
           "type": "array",
           "items": {
-            "$ref": "#components/schemas/jointPosition"
+            "$ref": "#/components/schemas/jointPosition"
           }
         }
       },
@@ -128,6 +128,12 @@
           }
         }
       ],
+      "result": {
+        "name": "noResult",
+        "schema": {
+          "type": "null"
+        }
+      },
       "examples": [
         {
           "name": "jogJoint",
@@ -144,7 +150,11 @@
               "name": "speed",
               "value": 88
             }
-          ]
+          ],
+          "result": {
+            "name": "noResult",
+            "value": null
+          }
         }
       ],
       "tags": [
@@ -179,7 +189,13 @@
             }
           }
         }
-      ]
+      ],
+      "result": {
+        "name": "noResult",
+        "schema": {
+          "type": "null"
+        }
+      }
     }
   ],
   "components": {
@@ -198,7 +214,7 @@
       "jointPositions": {
         "type": "array",
         "items": {
-          "$ref": "#components/schemas/jointPosition"
+          "$ref": "#/components/schemas/jointPosition"
         }
       },
       "state": {
@@ -208,7 +224,7 @@
             "type": "boolean"
           },
           "jointPositions": {
-            "$ref": "#components/schemas/jointPositions"
+            "$ref": "#/components/schemas/jointPositions"
           }
         }
       }
