@@ -1,0 +1,233 @@
+{
+  "openrpc": "1.2.4",
+  "info": {
+    "version": "0.1.0",
+    "title": "Motion Controller API"
+  },
+  "methods": [
+    {
+      "name": "getActiveSubscriptions",
+      "description": "Get a list of state keys for which the client is currently subscribed to value changes",
+      "params": [],
+      "result": {
+        "name": "activeStateKeySubscriptions",
+        "description": "the state keys to which the client is currently subsribed",
+        "schema": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "getState",
+      "description": "Get the current state and optionally subscribe to changes",
+      "params": [
+        {
+          "name": "include",
+          "description": "state keys that should be included in the response. If undefined, all keys except any specifially excluded are included.",
+          "required": false,
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "name": "exclude",
+          "description": "state keys that should not be included in the response.",
+          "required": false,
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "name": "subscribeToChanges",
+          "required": false,
+          "description": "Subscribe to changes in the keys included in the request",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "state",
+        "description": "the current state. For subscription updates, only keys for changed values will be included.",
+        "schema": {
+          "$ref": "#/components/schemas/state"
+        }
+      }
+    },
+    {
+      "name": "getPosition",
+      "description": "Get current joint positions",
+      "params": [],
+      "result": {
+        "name": "jointPositions",
+        "description": "updated joint positions",
+        "schema": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/jointPosition"
+          }
+        }
+      },
+      "examples": [
+        {
+          "name": "getPosition",
+          "params": [],
+          "result": {
+            "name": "jointPositions",
+            "value": [
+              {
+                "jointIndex": 1,
+                "position": 393
+              },
+              {
+                "jointIndex": 5,
+                "position": 1829
+              }
+            ]
+          }
+        }
+      ],
+      "tags": [
+        {
+          "name": "motion"
+        }
+      ]
+    },
+    {
+      "name": "jogJoint",
+      "description": "Jog an joint with a specified velocity",
+      "params": [
+        {
+          "name": "jointIndex",
+          "description": "The index of the joint to jog",
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "direction",
+          "description": "Direction to jog the joint.",
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "speed",
+          "description": "The speed at which to jog.",
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "result": {
+        "name": "noResult",
+        "schema": {
+          "type": "null"
+        }
+      },
+      "examples": [
+        {
+          "name": "jogJoint",
+          "params": [
+            {
+              "name": "jointIndex",
+              "value": 3
+            },
+            {
+              "name": "direction",
+              "value": 1
+            },
+            {
+              "name": "speed",
+              "value": 88
+            }
+          ],
+          "result": {
+            "name": "noResult",
+            "value": null
+          }
+        }
+      ],
+      "tags": [
+        {
+          "name": "motion"
+        }
+      ]
+    },
+    {
+      "name": "unsubscribeState",
+      "description": "Unsubscribe from changes to state",
+      "params": [
+        {
+          "name": "include",
+          "description": "state keys that should be unsubscribed from. If undefined, all keys except any specifially excluded are included.",
+          "required": false,
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "name": "exclude",
+          "description": "state keys that should not be unsubscribed from",
+          "required": false,
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      ],
+      "result": {
+        "name": "noResult",
+        "schema": {
+          "type": "null"
+        }
+      }
+    }
+  ],
+  "components": {
+    "schemas": {
+      "jointPosition": {
+        "type": "object",
+        "properties": {
+          "jointIndex": {
+            "type": "integer"
+          },
+          "position": {
+            "type": "integer"
+          }
+        }
+      },
+      "jointPositions": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/jointPosition"
+        }
+      },
+      "state": {
+        "type": "object",
+        "properties": {
+          "robotOnline": {
+            "type": "boolean"
+          },
+          "jointPositions": {
+            "$ref": "#/components/schemas/jointPositions"
+          }
+        }
+      }
+    }
+  }
+}

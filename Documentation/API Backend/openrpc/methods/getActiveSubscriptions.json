@@ -1,0 +1,15 @@
+{
+    "name": "getActiveSubscriptions",
+    "description": "Get a list of state keys for which the client is currently subscribed to value changes",
+    "params": [],
+    "result": {
+        "name": "activeStateKeySubscriptions",
+        "description": "the state keys to which the client is currently subsribed",
+        "schema": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        }
+    }
+}

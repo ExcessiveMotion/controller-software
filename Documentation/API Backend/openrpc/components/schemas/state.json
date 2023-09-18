@@ -1,0 +1,11 @@
+{
+    "type": "object",
+    "properties": {
+        "robotOnline": {
+            "type": "boolean"
+        },
+        "jointPositions": {
+            "$ref": "#/components/schemas/jointPositions"
+        }
+    }
+}

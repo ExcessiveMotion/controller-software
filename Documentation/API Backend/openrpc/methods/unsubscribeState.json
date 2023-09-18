@@ -1,0 +1,34 @@
+{
+    "name": "unsubscribeState",
+    "description": "Unsubscribe from changes to state",
+    "params": [
+        {
+            "name": "include",
+            "description": "state keys that should be unsubscribed from. If undefined, all keys except any specifially excluded are included.",
+            "required": false,
+            "schema": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            }
+        },
+        {
+            "name": "exclude",
+            "description": "state keys that should not be unsubscribed from",
+            "required": false,
+            "schema": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            }
+        }
+    ],
+    "result": {
+        "name": "noResult",
+        "schema": {
+            "type": "null"
+        }
+    }
+}

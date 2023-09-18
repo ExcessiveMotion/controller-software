@@ -1,0 +1,43 @@
+{
+    "name": "getState",
+    "description": "Get the current state and optionally subscribe to changes",
+    "params": [
+        {
+            "name": "include",
+            "description": "state keys that should be included in the response. If undefined, all keys except any specifially excluded are included.",
+            "required": false,
+            "schema": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            }
+        },
+        {
+            "name": "exclude",
+            "description": "state keys that should not be included in the response.",
+            "required": false,
+            "schema": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            }
+        },
+        {
+            "name": "subscribeToChanges",
+            "required": false,
+            "description": "Subscribe to changes in the keys included in the request",
+            "schema": {
+                "type": "boolean"
+            }
+        }
+    ],
+    "result": {
+        "name": "state",
+        "description": "the current state. For subscription updates, only keys for changed values will be included.",
+        "schema": {
+            "$ref": "#/components/schemas/state"
+        }
+    }
+}
