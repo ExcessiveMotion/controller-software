@@ -22,7 +22,7 @@
                 }
             ],
             "preLaunchTask": "Launch gdbserver on Zynq",
-            "miDebuggerServerAddress": "192.168.2.100:1234", // Replace with your SSH alias and port
+            "miDebuggerServerAddress": "em-os@zynq:1234", // Replace with your SSH alias and port
             "sourceFileMap": {
                 "/home/em-os/controller/": "${workspaceFolder}/zynq_files/controller/" // Adjust if your source files are in a different location
             },
